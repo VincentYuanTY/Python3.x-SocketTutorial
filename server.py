@@ -29,12 +29,9 @@ def function(newsock, address):
             restsize = filesize  
             print ("recving...")  
             while 1:  
-                if restsize > 10240000:
-                    filedata = newsock.recv(10240000)  
-                else:  
-                    filedata = newsock.recv(restsize)  
-                    fp.write(filedata)  
-                    break  
+                filedata = newsock.recv(restsize)  
+                fp.write(filedata)  
+                break  
                 if not filedata:  
                     break  
                 fp.write(filedata)  
