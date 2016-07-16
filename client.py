@@ -30,7 +30,7 @@ if not e:
         sock.send(fhead) 
         fp = open(filename,'rb')  
         while 1:        
-            filedata = fp.read(10240000)  
+            filedata = fp.read()  
             if not filedata:  
                 break  
             sock.send(filedata)  
