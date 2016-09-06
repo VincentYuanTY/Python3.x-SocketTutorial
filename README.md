@@ -11,7 +11,7 @@
 
 First, you should create two new folders which named 'download' and 'upload' in the same directory of the py file.(The folders names can be configured)
 Then,you should execute the 'server.py' or 'server_linux.py' in terms of your OS to launch the receiver service.
-Finally,launching the 'client.py' as the Send-Side and enter the receiver IP Address.At last enter the file name which you want to transmit.
+Finally,launching the 'client.py' as the Send-Side and enter the receiver IP Address.After that, enter the file name which you want to transmit.
 
 PS:The python3 should be set allowable in the firewall.
 
