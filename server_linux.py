@@ -22,11 +22,10 @@ def function(newsock, address):
         try:  
             fhead = newsock.recv(FILEINFO_SIZE)  
             filename, filesize = struct.unpack('128sI', fhead)  
-            print ("address is: ",address)  
-            print (filename, len(filename),type(filename))  
-            print (filesize)  
+            print ("address is: ",address)        
             filename = filename.decode('utf-8')
             filename = download_path+filename.strip('\x00')
+            print (filename,filesize)  
             fp = open(filename,'wb')
             restsize = filesize  
             print ("recving...")  
@@ -43,7 +42,7 @@ def function(newsock, address):
             fp.close()  
             print ("recv succeeded !!File named:",filename)  
         except:  
-            print ("he socket partner maybe closed") 
+            print ("The socket partner maybe closed") 
             newsock.close()  
             break
 
