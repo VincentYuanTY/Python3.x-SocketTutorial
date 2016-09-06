@@ -24,14 +24,17 @@ except e:
 if not e:  
     while 1:  
         filename_origin = input("please enter the filename:")
-        filename = upload_path + filename_origin    
-        FILEINFO_SIZE = struct.calcsize('128sI')  
+        filename = upload_path + filename_origin   
+        if os.stat(filename).st_size == 0
+            print ("no specified file!")
+            break      
         fhead = struct.pack('128sI',filename_origin.encode('utf-8'),os.stat(filename).st_size)
         sock.send(fhead) 
         fp = open(filename,'rb')  
         while 1:        
             filedata = fp.read()  
-            if not filedata:  
+            if not filedata:
+                print ("no specified file!")  
                 break  
             sock.send(filedata)  
         print ("sending over...") 
